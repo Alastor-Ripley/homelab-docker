@@ -27,6 +27,7 @@ services:
     environment:
       TZ: ${TZ}
       JELLYFIN_PublishedServerUrl: ${SERVER_URL}:${PORT_HTPC_HTTP} #optional. The Server URL to publish in udp Auto Discovery response.
+      - NVIDIA_VISIBLE_DEVICES=all
 
     labels:
       - diun.enable=true
@@ -40,8 +41,9 @@ services:
       - homepage.widget.key=${HOMEPAGE_JELLYFIN_API}
 
     devices:
-      - /dev/dri/renderD128:/dev/dri/renderD128 # VAAPI
-      - /dev/dri/card0:/dev/dri/card0
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
     volumes:
       - ${CONFIGDIR}/jellyfin:/config
@@ -51,9 +53,9 @@ services:
     #deploy:
     #  resources:
     #    limits:
-    #      cpus: '2'
-    #      memory: 1024M
-    restart: unless-stopped
+    #      cpus: '8'
+    #      memory: 4096M
+    restart: always
 
 
 
