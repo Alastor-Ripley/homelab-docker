@@ -69,7 +69,7 @@ services:
         limits:
           cpus: '2'
           memory: 4096M
-    restart: unless-stopped
+    restart: always
 
 
   paperless_broker:
@@ -99,7 +99,7 @@ services:
           limits:
             cpus: '1'
             memory: 256M
-    restart: unless-stopped
+    restart: always
 
   paperless_db:
     container_name: paperless_db
@@ -140,7 +140,7 @@ services:
         limits:
           cpus: '1'
           memory: 256M
-    restart: unless-stopped
+    restart: always
 
 networks:
   paperless-net:
