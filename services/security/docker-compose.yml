@@ -85,7 +85,7 @@ services:
         limits:
           cpus: '1'
           memory: 64M  
-    restart: unless-stopped
+    restart: always
 
 
 # volumes:
