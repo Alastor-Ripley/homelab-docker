@@ -69,7 +69,7 @@ services:
         limits:
           cpus: '1'
           memory: 32M
-    restart: unless-stopped
+    restart: always
 
   scrutiny:
     container_name: scrutiny
@@ -109,7 +109,7 @@ services:
         limits:
           cpus: '1'
           memory: 256M
-    restart: unless-stopped
+    restart: always
 
   speedtest-tracker:
     container_name: speedtest-tracker
@@ -143,7 +143,7 @@ services:
       resources:
         limits:
           memory: 128M
-    restart: unless-stopped
+    restart: always
 
   uptime-kuma:
     container_name: uptime_kuma
@@ -173,7 +173,7 @@ services:
         limits:
           cpus: '1'
           memory: 128M
-    restart: unless-stopped
+    restart: always
   
 
 networks:
