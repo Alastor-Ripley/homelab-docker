@@ -42,7 +42,7 @@ services:
         limits:
           cpus: '2'
           memory: 1024M
-    restart: unless-stopped
+    restart: always
 
   tandoor_db:
     container_name: tandoor_db
@@ -81,7 +81,7 @@ services:
         limits:
           cpus: '1'
           memory: 256M
-    restart: unless-stopped
+    restart: always
 
 networks:
   caddy-net:
