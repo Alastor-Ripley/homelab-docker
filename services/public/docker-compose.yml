@@ -46,7 +46,7 @@ services:
 
     healthcheck:
       test: ["CMD", "caddy", "version"]
-    restart: unless-stopped
+    restart: always
 
 
 ####################
@@ -81,7 +81,7 @@ services:
         limits:
           cpus: '1'
           memory: 32M
-    restart: unless-stopped
+    restart: always
 
 
 networks:
