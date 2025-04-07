@@ -91,7 +91,7 @@ services:
           memory: 128M
     healthcheck:
       disable: true
-    restart: unless-stopped
+    restart: always
 
 networks:
   dns-net:
