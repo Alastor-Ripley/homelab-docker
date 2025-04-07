@@ -28,7 +28,7 @@ services:
         limits:
           cpus: '1'
           memory: 256M
-    restart: unless-stopped
+    restart: always
 
   gloomhaven-server:
     container_name: gloomhaven-server
@@ -55,7 +55,7 @@ services:
         limits:
           cpus: '1'
           memory: 256M
-    restart: unless-stopped
+    restart: always
 
 networks:
   caddy-net:
