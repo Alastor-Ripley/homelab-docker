@@ -49,7 +49,7 @@ services:
     cap_add:
       - NET_ADMIN
     
-    restart: unless-stopped
+    restart: always
 
   prowlarr:
     container_name: prowlarr
@@ -87,7 +87,7 @@ services:
         limits:
           cpus: '1'
           memory: 600M
-    restart: unless-stopped
+    restart: always
   
   qbittorrent:
     container_name: qbittorrent
@@ -127,7 +127,7 @@ services:
         limits:
           cpus: '1'
           memory: 512M
-    restart: unless-stopped
+    restart: always
 
 ####################
 # Media Managers
@@ -168,7 +168,7 @@ services:
         limits:
           cpus: '1'
           memory: 512M
-    restart: unless-stopped
+    restart: always
   
   radarr:
     container_name: radarr
@@ -208,7 +208,7 @@ services:
         limits:
           cpus: '1'
           memory: 512M
-    restart: unless-stopped
+    restart: always
 
   sonarr:
     container_name: sonarr
@@ -248,7 +248,7 @@ services:
         limits:
           cpus: '1'
           memory: 512M
-    restart: unless-stopped
+    restart: always
 
   podgrab:
     container_name: podgrab
@@ -277,7 +277,7 @@ services:
         limits:
           cpus: '1'
           memory: 512M
-    restart: unless-stopped
+    restart: always
 
 ####################
 # YouTube Downloader
@@ -309,7 +309,7 @@ services:
     volumes:
       - ${DOWNLOADDIR}/youtube:/downloads
 
-    restart: unless-stopped
+    restart: always
 
 ####################
 # Helpers
@@ -338,5 +338,5 @@ services:
 
       RECHECK_TIME: 600 # number of seconds between checks to gluetun server for port
 
-    restart: unless-stopped
+    restart: always
     
