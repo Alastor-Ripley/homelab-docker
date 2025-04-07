@@ -39,7 +39,7 @@ services:
         limits:
           cpus: '1'
           memory: 512M
-    restart: unless-stopped
+    restart: always
 
 
 networks:
